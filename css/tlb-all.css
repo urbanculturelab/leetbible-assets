@@ -16,29 +16,33 @@
     padding: 0 !important;
 }
 
-/* 기본 컬러 변수 */
+/* 기본 컬러 변수 - 블랙 톤앤매너 */
 :root {
     --tlb-primary: #667eea;
     --tlb-primary-dark: #5a67d8;
     --tlb-secondary: #764ba2;
     --tlb-gradient: linear-gradient(135deg, var(--tlb-primary) 0%, var(--tlb-secondary) 100%);
-    --tlb-text-primary: #222;
-    --tlb-text-secondary: #555;
-    --tlb-text-muted: #999;
-    --tlb-bg-light: #f8f9fa;
-    --tlb-bg-lighter: #f0f2f5;
-    --tlb-border: #e0e0e0;
-    --tlb-border-light: #f0f0f0;
+    --tlb-text-primary: #ffffff;
+    --tlb-text-secondary: #a0a0a0;
+    --tlb-text-muted: #707070;
+    --tlb-bg-dark: #000000;
+    --tlb-bg-section: #0a0a0a;
+    --tlb-bg-card: #111111;
+    --tlb-bg-light: #1a1a1a;
+    --tlb-bg-lighter: #222222;
+    --tlb-border: #2a2a2a;
+    --tlb-border-light: #1a1a1a;
 }
 
 /* 기본 래퍼 */
 .tlb_wrapper,
 .tlb_detail_wrapper {
-    color: #333;
+    color: var(--tlb-text-primary);
+    background-color: #000000;
     line-height: 1.6;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 /* 헤딩 - SUITE 폰트 */
@@ -101,10 +105,11 @@
 
 /* 공통 카드 */
 .tlb_card {
-    background: white;
-    border-radius: 16px;
+    background: var(--tlb-bg-card);
+    border-radius: 0;
     padding: 40px;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+    box-shadow: none;
+    border: 1px solid var(--tlb-border);
 }
 
 /* 섹션 타이틀 */
@@ -126,13 +131,15 @@
 /* 배송 안내 섹션 */
 .tlb_detail_ship_notice {
     background: var(--tlb-gradient);
-    border-radius: 16px;
-    padding: 20px 30px;
-    margin-bottom: 40px;
+    border-radius: 0;
+    padding: 30px;
+    margin: 0;
     display: flex;
     align-items: center;
     gap: 20px;
     box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .tlb_ship_badge {
@@ -165,9 +172,11 @@
 /* 샘플 다운로드 섹션 */
 .tlb_detail_sample_section {
     background: var(--tlb-bg-light);
-    border-radius: 16px;
-    padding: 30px;
-    margin-bottom: 40px;
+    border-radius: 0;
+    padding: 40px 30px;
+    margin: 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .tlb_sample_box {
@@ -224,15 +233,27 @@
 
 /* 미디어 래퍼 */
 .tlb_detail_media_wrapper {
-    margin-bottom: 60px;
+    margin: 0;
+    padding: 0;
+    background: #000000;
+}
+
+.tlb_detail_media_wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
 }
 
 /* 교재 정보 섹션 */
 .tlb_detail_info {
-    background: white;
-    border-radius: 16px;
-    padding: 40px;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+    background: var(--tlb-bg-card);
+    border-radius: 0;
+    padding: 60px 40px;
+    box-shadow: none;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* 헤더 */
@@ -240,7 +261,7 @@
     text-align: center;
     margin-bottom: 50px;
     padding-bottom: 30px;
-    border-bottom: 2px solid var(--tlb-border-light);
+    border-bottom: 2px solid var(--tlb-border);
 }
 
 .tlb_header_title {
@@ -290,7 +311,7 @@
 .tlb_book_name_ko {
     font-size: 18px;
     font-weight: 500;
-    color: #666;
+    color: var(--tlb-text-secondary);
     margin: 0;
     font-family: 'SUITE', sans-serif;
 }
@@ -322,6 +343,7 @@
 
 .tlb_spec_item {
     text-align: center;
+    color: var(--tlb-text-primary);
 }
 
 .tlb_spec_label {
@@ -380,7 +402,7 @@
 
 .tlb_subject_count {
     flex: 1;
-    color: #333;
+    color: var(--tlb-text-primary);
     font-weight: 500;
 }
 
@@ -437,7 +459,7 @@
     flex: 1;
     font-size: 18px;
     font-weight: 600;
-    color: #333;
+    color: var(--tlb-text-primary);
     margin: 0;
     font-family: 'SUITE', sans-serif;
 }
@@ -446,13 +468,13 @@
     margin: 0;
     font-size: 14px;
     line-height: 1.6;
-    color: #666;
+    color: var(--tlb-text-secondary);
 }
 
 /* 학습 효과 */
 .tlb_detail_outcomes {
     padding-top: 30px;
-    border-top: 2px solid var(--tlb-border-light);
+    border-top: 2px solid var(--tlb-border);
 }
 
 .tlb_outcomes_list {
