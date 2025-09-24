@@ -43,6 +43,7 @@
     width: 100%;
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* 가로 스크롤 방지 */
 }
 
 /* 헤딩 - SUITE 폰트 */
@@ -236,6 +237,8 @@
     margin: 0;
     padding: 0;
     background: #000000;
+    width: 100%;
+    max-width: 100%;
 }
 
 .tlb_detail_media_wrapper img {
@@ -244,6 +247,27 @@
     display: block;
     margin: 0;
     padding: 0;
+}
+
+/* 유튜브 영상 컨테이너 */
+.tlb_detail_media_wrapper > div[style*="position:relative"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* 아임웹 p 태그 내 영상 처리 */
+.tlb_detail_media_wrapper p {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.tlb_detail_media_wrapper iframe {
+    max-width: 100%;
+    width: 100%;
 }
 
 /* 교재 정보 섹션 */
