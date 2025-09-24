@@ -619,26 +619,30 @@
 
 /* 푸터 전체 래퍼 */
 .tlb_footer_wrapper {
-    background: #ffffff;
-    border-top: 1px solid #e5e5e5;
+    background: #f8f9fa;
+    border-top: 2px solid #e9ecef;
     margin-top: 80px;
-    padding: 80px 0 40px;
+    padding: 100px 0 50px;
     font-family: 'SUIT', sans-serif;
-    color: #333333;
+    color: #212529;
+    position: relative;
 }
 
 /* 푸터 컨테이너 */
 .tlb_footer_container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
 }
 
 /* 푸터 섹션 */
 .tlb_footer_section {
-    margin-bottom: 60px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 80px;
+    padding: 40px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
 }
 
 .tlb_footer_section:last-child {
@@ -650,25 +654,30 @@
 /* 섹션 헤더 */
 .tlb_footer_title {
     display: flex;
-    align-items: baseline;
-    gap: 12px;
-    margin-bottom: 24px;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 36px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #667eea;
+    position: relative;
 }
 
 .tlb_footer_title_ko {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 700;
-    color: #111111;
+    color: #212529;
     font-family: 'SUITE', sans-serif;
     margin: 0;
+    position: relative;
+    display: inline-block;
 }
 
 .tlb_footer_title_en {
-    font-size: 13px;
-    font-weight: 500;
-    color: #999999;
+    font-size: 14px;
+    font-weight: 600;
+    color: #6c757d;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     font-family: 'SUITE', sans-serif;
     margin: 0;
 }
@@ -687,24 +696,30 @@
 }
 
 .tlb_footer_customer_main {
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 700;
     color: #667eea;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .tlb_footer_customer_desc {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.8;
-    color: #666666;
+    color: #495057;
+    font-weight: 400;
 }
 
 .tlb_footer_customer_sub {
-    font-size: 13px;
-    color: #999999;
-    margin-top: 8px;
-    padding-left: 12px;
-    border-left: 2px solid #f0f0f0;
+    font-size: 14px;
+    color: #6c757d;
+    margin-top: 12px;
+    padding: 12px 16px;
+    background: rgba(102, 126, 234, 0.05);
+    border-left: 3px solid #667eea;
+    border-radius: 0 8px 8px 0;
 }
 
 /* 테이블 스타일 */
@@ -715,8 +730,9 @@
 
 .tlb_footer_table_row {
     display: flex;
-    padding: 24px 0;
-    border-bottom: 1px solid #f5f5f5;
+    padding: 32px 0;
+    border-bottom: 1px solid #e9ecef;
+    transition: background 0.2s ease;
 }
 
 .tlb_footer_table_row:last-child {
@@ -724,14 +740,15 @@
 }
 
 .tlb_footer_table_label {
-    flex: 0 0 180px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #333333;
+    flex: 0 0 200px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #212529;
     font-family: 'SUITE', sans-serif;
     display: flex;
     align-items: flex-start;
     padding-top: 4px;
+    position: relative;
 }
 
 .tlb_footer_table_content {
@@ -747,11 +764,11 @@
 
 .tlb_footer_list li {
     position: relative;
-    padding-left: 20px;
-    margin-bottom: 12px;
-    font-size: 14px;
+    padding-left: 28px;
+    margin-bottom: 16px;
+    font-size: 15px;
     line-height: 1.8;
-    color: #666666;
+    color: #495057;
 }
 
 .tlb_footer_list li:last-child {
@@ -759,17 +776,23 @@
 }
 
 .tlb_footer_list li:before {
-    content: "•";
+    content: "→";
     position: absolute;
     left: 0;
+    top: 2px;
     color: #667eea;
     font-weight: bold;
+    font-size: 16px;
 }
 
 /* 강조 텍스트 */
 .tlb_footer_highlight {
     color: #667eea;
-    font-weight: 600;
+    font-weight: 700;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
 }
 
 /* 반응형 디자인 */
