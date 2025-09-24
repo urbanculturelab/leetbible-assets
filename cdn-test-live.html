@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎨 LEET BIBLE CDN 실시간 테스트</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .status-board {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .status-item {
+            padding: 15px;
+            border-radius: 10px;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        
+        .status-item.success {
+            background: #d4edda;
+            border-color: #28a745;
+        }
+        
+        .status-item.error {
+            background: #f8d7da;
+            border-color: #dc3545;
+        }
+        
+        .status-item.loading {
+            background: #fff3cd;
+            border-color: #ffc107;
+        }
+        
+        .status-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .status-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        
+        .loading .status-icon {
+            background: #ffc107;
+            animation: pulse 1s infinite;
+        }
+        
+        .success .status-icon {
+            background: #28a745;
+        }
+        
+        .error .status-icon {
+            background: #dc3545;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .image-preview {
+            margin-top: 30px;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .image-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .image-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #962DE3, #4FE32D);
+        }
+        
+        .image-info {
+            padding: 15px;
+        }
+        
+        .image-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .image-url {
+            font-size: 11px;
+            color: #6c757d;
+            word-break: break-all;
+            font-family: monospace;
+            background: #f0f0f0;
+            padding: 5px;
+            border-radius: 3px;
+            margin-top: 5px;
+        }
+        
+        .timer {
+            text-align: center;
+            color: white;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        
+        #countdown {
+            font-weight: bold;
+            color: #4FE32D;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 LEET BIBLE CDN 실시간 테스트</h1>
+        
+        <div class="timer">
+            CDN 활성화 대기중... <span id="countdown">60</span>초
+        </div>
+        
+        <div class="status-board">
+            <h2>📊 시스템 상태</h2>
+            <div class="status-grid">
+                <div class="status-item loading" id="github-status">
+                    <div class="status-title">
+                        <span class="status-icon"></span>
+                        GitHub 레포지토리
+                    </div>
+                    <div class="status-text">연결 확인 중...</div>
+                </div>
+                
+                <div class="status-item loading" id="cdn-status">
+                    <div class="status-title">
+                        <span class="status-icon"></span>
+                        jsDelivr CDN
+                    </div>
+                    <div class="status-text">활성화 대기 중...</div>
+                </div>
+                
+                <div class="status-item loading" id="image-status">
+                    <div class="status-title">
+                        <span class="status-icon"></span>
+                        이미지 로드
+                    </div>
+                    <div class="status-text">테스트 대기 중...</div>
+                </div>
+                
+                <div class="status-item" id="cache-status">
+                    <div class="status-title">
+                        <span class="status-icon"></span>
+                        캐시 상태
+                    </div>
+                    <div class="status-text">준비 중...</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="image-preview">
+            <h2>🖼️ CDN 이미지 테스트</h2>
+            <div class="image-grid">
+                <div class="image-card">
+                    <img id="test-cover" 
+                         src="https://cdn.jsdelivr.net/gh/urbanculturelab/leetbible-assets@main/products/principle-2027/test-cover.svg" 
+                         alt="테스트 표지"
+                         onerror="handleImageError(this, 'cover')">
+                    <div class="image-info">
+                        <div class="image-title">📚 교재 표지 (테스트)</div>
+                        <div class="image-url">products/principle-2027/test-cover.svg</div>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <img id="test-hero" 
+                         src="https://cdn.jsdelivr.net/gh/urbanculturelab/leetbible-assets@main/templates/default-hero.svg" 
+                         alt="히어로 배너"
+                         onerror="handleImageError(this, 'hero')">
+                    <div class="image-info">
+                        <div class="image-title">🎨 히어로 배너</div>
+                        <div class="image-url">templates/default-hero.svg</div>
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <img id="test-author" 
+                         src="https://cdn.jsdelivr.net/gh/urbanculturelab/leetbible-assets@main/authors/default.svg" 
+                         alt="저자 프로필"
+                         onerror="handleImageError(this, 'author')">
+                    <div class="image-info">
+                        <div class="image-title">👤 저자 프로필</div>
+                        <div class="image-url">authors/default.svg</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 30px; padding: 20px; background: #f0f0f0; border-radius: 10px;">
+                <h3>✅ 성공 체크리스트</h3>
+                <ul style="margin-top: 10px; line-height: 1.8;">
+                    <li id="check-github">⏳ GitHub 레포 생성 및 파일 업로드</li>
+                    <li id="check-cdn">⏳ CDN 활성화 (1-2분 소요)</li>
+                    <li id="check-images">⏳ 이미지 로드 확인</li>
+                    <li id="check-ready">⏳ 상세페이지 제작 준비 완료</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let countdown = 60;
+        let retryCount = 0;
+        const maxRetries = 10;
+        
+        // 카운트다운
+        const timer = setInterval(() => {
+            countdown--;
+            document.getElementById('countdown').textContent = countdown;
+            
+            if (countdown <= 0) {
+                clearInterval(timer);
+                document.querySelector('.timer').innerHTML = '✅ CDN 활성화 완료 예상';
+            }
+        }, 1000);
+        
+        // 이미지 에러 핸들링
+        function handleImageError(img, type) {
+            retryCount++;
+            if (retryCount < maxRetries) {
+                setTimeout(() => {
+                    img.src = img.src + '?retry=' + Date.now();
+                }, 3000);
+            } else {
+                document.getElementById('image-status').className = 'status-item error';
+                document.querySelector('#image-status .status-text').textContent = '로드 실패';
+            }
+        }
+        
+        // 상태 체크
+        function checkStatus() {
+            // GitHub 상태
+            fetch('https://api.github.com/repos/urbanculturelab/leetbible-assets')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.name === 'leetbible-assets') {
+                        document.getElementById('github-status').className = 'status-item success';
+                        document.querySelector('#github-status .status-text').textContent = '✅ 연결됨';
+                        document.getElementById('check-github').innerHTML = '✅ GitHub 레포 생성 및 파일 업로드';
+                    }
+                })
+                .catch(err => {
+                    document.getElementById('github-status').className = 'status-item error';
+                    document.querySelector('#github-status .status-text').textContent = '❌ 연결 실패';
+                });
+            
+            // 이미지 체크
+            const testImage = new Image();
+            testImage.onload = function() {
+                document.getElementById('cdn-status').className = 'status-item success';
+                document.querySelector('#cdn-status .status-text').textContent = '✅ 활성화됨';
+                document.getElementById('image-status').className = 'status-item success';
+                document.querySelector('#image-status .status-text').textContent = '✅ 정상 작동';
+                document.getElementById('cache-status').className = 'status-item success';
+                document.querySelector('#cache-status .status-text').textContent = '✅ 캐시됨';
+                
+                // 체크리스트 업데이트
+                document.getElementById('check-cdn').innerHTML = '✅ CDN 활성화 (1-2분 소요)';
+                document.getElementById('check-images').innerHTML = '✅ 이미지 로드 확인';
+                document.getElementById('check-ready').innerHTML = '✅ 상세페이지 제작 준비 완료';
+            };
+            
+            testImage.onerror = function() {
+                setTimeout(checkStatus, 5000); // 5초 후 재시도
+            };
+            
+            testImage.src = 'https://cdn.jsdelivr.net/gh/urbanculturelab/leetbible-assets@main/products/principle-2027/test-cover.svg?' + Date.now();
+        }
+        
+        // 페이지 로드 시 체크 시작
+        window.addEventListener('load', () => {
+            setTimeout(checkStatus, 2000);
+        });
+        
+        // 10초마다 재체크
+        setInterval(checkStatus, 10000);
+    </script>
+</body>
+</html>

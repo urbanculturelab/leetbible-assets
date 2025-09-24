@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN 이미지 테스트</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #f5f5f5;
+        }
+        
+        h1 {
+            color: #962DE3;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .test-section {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .test-section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #962DE3;
+            padding-bottom: 10px;
+        }
+        
+        .image-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .image-box {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+        }
+        
+        .image-box img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .image-box p {
+            margin-top: 10px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .status {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        
+        .status.success {
+            background: #4FE32D;
+            color: white;
+        }
+        
+        .status.error {
+            background: #ff4444;
+            color: white;
+        }
+        
+        .url-display {
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+            word-break: break-all;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎨 LEET BIBLE CDN 이미지 테스트</h1>
+    
+    <div class="test-section">
+        <h2>1. GitHub 직접 연결 테스트</h2>
+        <div class="image-container">
+            <div class="image-box">
+                <img src="https://raw.githubusercontent.com/urbanculturelab/leetbible-assets/main/products/principle-2027/test-cover.svg" 
+                     alt="GitHub Raw 테스트"
+                     onload="this.nextElementSibling.innerHTML='<span class=\'status success\'>✓ 로드 성공</span>'"
+                     onerror="this.nextElementSibling.innerHTML='<span class=\'status error\'>✗ 로드 실패</span>'">
+                <p></p>
+                <div class="url-display">
+                    https://raw.githubusercontent.com/.../test-cover.svg
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>2. jsDelivr CDN 테스트</h2>
+        <div class="image-container">
+            <div class="image-box">
+                <img src="https://cdn.jsdelivr.net/gh/urbanculturelab/leetbible-assets@main/products/principle-2027/test-cover.svg" 
+                     alt="jsDelivr CDN 테스트"
+                     onload="this.nextElementSibling.innerHTML='<span class=\'status success\'>✓ 로드 성공</span>'"
+                     onerror="this.nextElementSibling.innerHTML='<span class=\'status error\'>✗ 로드 실패 (1-2분 후 재시도)</span>'">
+                <p></p>
+                <div class="url-display">
+                    https://cdn.jsdelivr.net/gh/.../test-cover.svg
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>3. 플레이스홀더 이미지 (로컬 생성)</h2>
+        <div class="image-container">
+            <div class="image-box">
+                <svg width="300" height="400" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#962DE3;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#4FE32D;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="300" height="400" fill="url(#grad1)"/>
+                    <text x="150" y="200" font-family="Arial" font-size="24" fill="white" text-anchor="middle">
+                        프린시플(상) 2027
+                    </text>
+                </svg>
+                <p><span class="status success">✓ SVG 직접 생성</span></p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>📋 체크리스트</h2>
+        <ol>
+            <li>GitHub 레포 생성 완료 ✓</li>
+            <li>README.md 파일 생성 (진행 필요)</li>
+            <li>폴더 구조 생성 (진행 필요)</li>
+            <li>테스트 이미지 업로드 (진행 필요)</li>
+            <li>CDN 연결 확인 (대기 중)</li>
+        </ol>
+        
+        <h3>🚀 다음 단계</h3>
+        <p>위 이미지들이 정상적으로 로드되면, 실제 교재 이미지를 업로드하고 상세페이지 제작을 시작합니다!</p>
+    </div>
+    
+    <script>
+        // 페이지 로드 시 CDN 상태 체크
+        window.addEventListener('load', function() {
+            console.log('CDN 테스트 페이지 로드 완료');
+            
+            // 5초 후 재시도
+            setTimeout(function() {
+                const imgs = document.querySelectorAll('img');
+                imgs.forEach(img => {
+                    if (img.complete && img.naturalHeight === 0) {
+                        img.src = img.src + '?retry=' + Date.now();
+                    }
+                });
+            }, 5000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<svg width="600" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#962DE3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4FE32D;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="600" height="800" fill="url(#gradient)"/>
+  
+  <rect x="50" y="50" width="500" height="700" fill="white" opacity="0.1"/>
+  
+  <text x="300" y="200" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="white" text-anchor="middle">
+    LEET BIBLE
+  </text>
+  
+  <text x="300" y="280" font-family="Arial, sans-serif" font-size="32" fill="white" text-anchor="middle">
+    프린시플(상)
+  </text>
+  
+  <text x="300" y="330" font-family="Arial, sans-serif" font-size="28" fill="white" text-anchor="middle">
+    2027
+  </text>
+  
+  <rect x="150" y="400" width="300" height="3" fill="white" opacity="0.5"/>
+  
+  <text x="300" y="500" font-family="Arial, sans-serif" font-size="20" fill="white" text-anchor="middle" opacity="0.9">
+    법학적성시험
+  </text>
+  
+  <text x="300" y="540" font-family="Arial, sans-serif" font-size="20" fill="white" text-anchor="middle" opacity="0.9">
+    언어이해 기본서
+  </text>
+  
+  <text x="300" y="700" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" opacity="0.7">
+    현직 변호사가 직접 집필한
+  </text>
+  
+  <text x="300" y="730" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" opacity="0.7">
+    LEET 완벽 대비서
+  </text>
+</svg>

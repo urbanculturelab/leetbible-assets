@@ -1,0 +1,48 @@
+{
+  "product": {
+    "name": "리트바이블 프린시플 (상) 2027 개정판",
+    "nameShort": "프린시플(상) 2027",
+    "category": "언어이해",
+    "price": "99,000",
+    "discountPrice": null,
+    "pages": "708",
+    "year": "2027",
+    "type": "개정판",
+    "author": "변호사 사례형문제"
+  },
+  
+  "description": {
+    "main": "The LEET BIBLE의 첫 번째이자 가장 핵심적인 교재",
+    "sub": "LEET식 사고의 틀을 통해 출제자가 의도한 방향대로 접근하는 기초 다지기",
+    "style": "대화식 문체로 마치 과외받는 듯한 느낌으로 설명이 세세히 집필"
+  },
+  
+  "features": [
+    {
+      "title": "LEET식 사고의 틀",
+      "description": "출제자의 의도를 정확히 파악하는 체계적 접근법"
+    },
+    {
+      "title": "708페이지 완벽 구성",
+      "description": "기초부터 실전까지 단계별 학습 설계"
+    },
+    {
+      "title": "대화식 문체",
+      "description": "과외받는 듯한 친근한 설명으로 어려운 개념도 쉽게 이해"
+    },
+    {
+      "title": "2027 개정판",
+      "description": "최신 출제 경향을 완벽 반영한 전면 개정"
+    }
+  ],
+  
+  "company": {
+    "name": "Urban Culture Lab Inc.",
+    "ceo": "Taehwan Chung",
+    "businessNumber": "419-87-02727",
+    "onlineBusinessNumber": "2023-용인기흥-2053호",
+    "address": "경기도 용인시 기흥구 동백중앙로 191, 8층 A8924",
+    "phone": "070-4138-2100",
+    "copyright": "The LEET BIBLE"
+  }
+}

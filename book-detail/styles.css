@@ -1,0 +1,462 @@
+/* ================================
+   LEET BIBLE 교재 상세페이지 스타일
+   ================================ */
+
+/* 아임웹 br 태그 간격 제거 */
+.tlb_detail_wrapper br {
+    line-height: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* 전체 래퍼 */
+.tlb_detail_wrapper {
+    color: #333;
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 헤딩 요소 - SUITE 폰트 적용 */
+.tlb_detail_wrapper h2,
+.tlb_detail_wrapper h3,
+.tlb_detail_wrapper h4 {
+    font-family: 'SUITE', sans-serif;
+}
+
+/* 배송 안내 섹션 */
+.tlb_detail_ship_notice {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 16px;
+    padding: 20px 30px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+}
+
+.tlb_ship_badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-weight: 600;
+}
+
+.tlb_ship_icon {
+    font-size: 20px;
+}
+
+.tlb_ship_text {
+    color: #667eea;
+    font-size: 14px;
+    font-family: 'SUITE', sans-serif;
+    font-weight: 600;
+}
+
+.tlb_ship_desc {
+    color: white;
+    margin: 0;
+    font-size: 15px;
+}
+
+/* 샘플 다운로드 섹션 */
+.tlb_detail_sample_section {
+    background: #f8f9fa;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+.tlb_sample_box {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.tlb_sample_icon {
+    font-size: 48px;
+    color: #667eea;
+}
+
+.tlb_sample_content {
+    flex: 1;
+}
+
+.tlb_sample_title {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #222;
+    font-family: 'SUITE', sans-serif;
+}
+
+.tlb_sample_desc {
+    margin: 0 0 16px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.tlb_sample_btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #667eea;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s;
+    font-family: 'SUITE', sans-serif;
+}
+
+.tlb_sample_btn:hover {
+    background: #5a67d8;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+    color: white;
+    text-decoration: none;
+}
+
+/* 미디어 래퍼 */
+.tlb_detail_media_wrapper {
+    margin-bottom: 60px;
+    /* 기존 이미지/영상 컨텐츠를 위한 공간 */
+}
+
+/* 교재 정보 섹션 */
+.tlb_detail_info {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+}
+
+/* 헤더 */
+.tlb_detail_header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.tlb_header_title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #222;
+    margin: 0 0 8px 0;
+    font-family: 'SUITE', sans-serif;
+}
+
+.tlb_header_subtitle {
+    font-size: 14px;
+    color: #999;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+/* 교재 소개 */
+.tlb_detail_book_intro {
+    margin-bottom: 50px;
+}
+
+.tlb_book_identity {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.tlb_book_logo {
+    width: 60px;
+    height: auto;
+}
+
+.tlb_book_names {
+    flex: 1;
+}
+
+.tlb_book_name_en {
+    font-size: 24px;
+    font-weight: 700;
+    color: #667eea;
+    margin: 0 0 4px 0;
+    font-family: 'SUITE', sans-serif;
+}
+
+.tlb_book_name_ko {
+    font-size: 18px;
+    font-weight: 500;
+    color: #666;
+    margin: 0;
+    font-family: 'SUITE', sans-serif;
+}
+
+.tlb_book_description {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.tlb_book_description p {
+    margin: 0 0 16px 0;
+}
+
+.tlb_book_description p:last-child {
+    margin-bottom: 0;
+}
+
+/* 스펙 정보 */
+.tlb_detail_specs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+    padding: 30px;
+    background: #f8f9fa;
+    border-radius: 12px;
+}
+
+.tlb_spec_item {
+    text-align: center;
+}
+
+.tlb_spec_label {
+    font-size: 13px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    font-family: 'SUITE', sans-serif;
+    font-weight: 600;
+}
+
+.tlb_spec_value {
+    font-size: 48px;
+    font-weight: 800;
+    color: #667eea;
+    line-height: 1;
+    font-family: 'SUITE', sans-serif;
+}
+
+.tlb_spec_unit {
+    font-size: 14px;
+    color: #999;
+    margin-top: 4px;
+}
+
+.tlb_spec_details {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.tlb_spec_detail_item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 14px;
+}
+
+.tlb_spec_detail_item:last-child {
+    border-bottom: none;
+}
+
+.tlb_subject_badge {
+    background: #667eea;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    min-width: 60px;
+    text-align: center;
+    font-family: 'SUITE', sans-serif;
+}
+
+.tlb_subject_count {
+    flex: 1;
+    color: #333;
+    font-weight: 500;
+}
+
+.tlb_subject_year {
+    color: #999;
+    font-size: 13px;
+}
+
+/* 섹션 타이틀 */
+.tlb_section_title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #222;
+    margin: 0 0 30px 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #667eea;
+    display: inline-block;
+    font-family: 'SUITE', sans-serif;
+}
+
+/* 목차 */
+.tlb_detail_toc {
+    margin-bottom: 50px;
+}
+
+.tlb_toc_list {
+    display: grid;
+    gap: 20px;
+}
+
+.tlb_toc_item {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+    transition: all 0.3s;
+}
+
+.tlb_toc_item:hover {
+    background: #f0f2f5;
+    transform: translateX(5px);
+}
+
+.tlb_toc_header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.tlb_toc_num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: #667eea;
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: 'SUITE', sans-serif;
+}
+
+.tlb_toc_title {
+    flex: 1;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    font-family: 'SUITE', sans-serif;
+}
+
+.tlb_toc_desc {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* 학습 효과 */
+.tlb_detail_outcomes {
+    padding-top: 30px;
+    border-top: 2px solid #f0f0f0;
+}
+
+.tlb_outcomes_list {
+    display: grid;
+    gap: 20px;
+}
+
+.tlb_outcome_item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea10 0%, #764ba210 100%);
+    border-radius: 12px;
+}
+
+.tlb_outcome_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: #667eea;
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.tlb_outcome_item p {
+    margin: 0;
+    flex: 1;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #555;
+}
+
+.tlb_outcome_item strong {
+    color: #667eea;
+    font-weight: 600;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: 'SUITE', sans-serif;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .tlb_detail_wrapper {
+        padding: 15px;
+    }
+
+    .tlb_detail_ship_notice {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .tlb_sample_box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .tlb_detail_info {
+        padding: 25px 20px;
+    }
+
+    .tlb_header_title {
+        font-size: 24px;
+    }
+
+    .tlb_spec_value {
+        font-size: 36px;
+    }
+
+    .tlb_book_identity {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .tlb_toc_header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .tlb_toc_num {
+        margin: 0 auto;
+    }
+}
